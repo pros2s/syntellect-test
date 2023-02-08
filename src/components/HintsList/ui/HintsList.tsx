@@ -7,12 +7,23 @@ import './HintsList.scss';
 interface HintsListProps {
   hints: IHint[];
   hintLimit?: number;
+  onCountryClick?: (country: IHint) => void;
 }
 
-export const HintsList = observer(({ hints, hintLimit = 0 }: HintsListProps) => (
+export const HintsList = observer(({ hints, onCountryClick, hintLimit = 0 }: HintsListProps) => (
   <ul className='HintsList'>
     {hints.map((hint, index) => (
-      <li key={uuidv4()} className={hintLimit <= index ? 'd-none' : 'HintsList__item'}>
+      <li
+        role='presentation'
+        onClick={() => {
+          onCountryClick?.(hint);
+        }}
+        onKeyDown={() => {
+          onCountryClick?.(hint);
+        }}
+        key={uuidv4()}
+        className={hintLimit <= index ? 'd-none' : 'HintsList__item'}
+      >
         {hint.name} - ({hint.fullName})
         <Image src={hint.flag} alt={hint.name} />
       </li>
