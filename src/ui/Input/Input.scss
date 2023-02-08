@@ -1,0 +1,13 @@
+.Input {
+  width: 100%;
+
+  color: transparent;
+
+  background-color: transparent;
+  border: none;
+  outline: none;
+
+  &:focus {
+    outline: none;
+  }
+}
