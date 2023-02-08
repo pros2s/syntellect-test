@@ -1,9 +1,8 @@
-import { ButtonHTMLAttributes, memo, ReactNode } from 'react';
+import { ButtonHTMLAttributes, memo } from 'react';
 
 import './Button.scss';
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
-  children: ReactNode;
   text?: string;
   callback?: () => void;
 }
@@ -13,7 +12,7 @@ export const Button = memo((props: ButtonProps) => {
 
   return (
     <button type='button' className='Button' {...restProps} onClick={callback}>
-      {children}
+      {text}
     </button>
   );
 });
