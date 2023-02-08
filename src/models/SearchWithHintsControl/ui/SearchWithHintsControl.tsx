@@ -4,6 +4,7 @@ import { Input } from 'ui/Input';
 import { Input as InputInstance } from 'models/ButtonsControl';
 import { observer } from 'mobx-react';
 import { Hints } from '../store/Hints';
+import { useDebounce } from '../hooks/useDebounce';
 
 interface SearchWithHintsControlProps {
   inputStore: InputInstance;
@@ -13,12 +14,16 @@ interface SearchWithHintsControlProps {
 
 export const SearchWithHintsControl = observer(
   ({ inputStore, hintLimit, hintsStore }: SearchWithHintsControlProps) => {
+    const debouncedSearch = useDebounce((val: string | number) => {
+      hintsStore.fetchHintsBySearchValue(String(val));
+    }, 500);
+
     const onChangeCountry = useCallback(
       (val: string | number) => {
         inputStore.setValue(val);
-        hintsStore.fetchHintsBySearchValue(String(val));
+        debouncedSearch(val);
       },
-      [hintsStore, inputStore]
+      [debouncedSearch, inputStore]
     );
 
     return (
