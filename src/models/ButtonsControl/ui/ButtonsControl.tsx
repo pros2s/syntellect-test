@@ -25,11 +25,9 @@ export const ButtonsControl = observer((props: ButtonsControlProps) => {
       <Input value={actualValue} onChange={setValue} />
       <div className='ButtonsControl__btns'>
         <div className='ButtonsControl__btns_left'>
-          <h1>Left Side</h1>
           {leftBtnsStore && <ButtonsList btnsList={leftBtns} />}
         </div>
         <div className='ButtonsControl__btns_right'>
-          <h1>Right Side</h1>
           {rightBtnsStore && <ButtonsList btnsList={rightBtns} />}
         </div>
       </div>

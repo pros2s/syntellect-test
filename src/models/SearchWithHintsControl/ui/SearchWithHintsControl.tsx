@@ -7,6 +7,8 @@ import { Loader } from 'ui/Loader';
 import { useDebounce } from '../hooks/useDebounce';
 import { Hints } from '../store/Hints';
 
+import './SearchWithHintsControl.scss';
+
 interface SearchWithHintsControlProps {
   inputStore: InputInstance;
   hintsStore: Hints;

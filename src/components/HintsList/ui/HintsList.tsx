@@ -24,8 +24,10 @@ export const HintsList = observer(({ hints, onCountryClick, hintLimit = 0 }: Hin
         key={uuidv4()}
         className={hintLimit <= index ? 'd-none' : 'HintsList__item'}
       >
-        {hint.name} - ({hint.fullName})
-        <Image src={hint.flag} alt={hint.name} />
+        <Image className='HintsList__img' src={hint.flag} alt={hint.name} />
+        <p>
+          {hint.name} - ({hint.fullName})
+        </p>
       </li>
     ))}
   </ul>

@@ -8,9 +8,9 @@ interface LoaderProps {
 
 export const Loader = memo(({ size }: LoaderProps) => (
   <div style={{ height: size, width: size }} className='lds-ring'>
-    <div style={{ height: size, width: size }} />
-    <div style={{ height: size, width: size }} />
-    <div style={{ height: size, width: size }} />
-    <div style={{ height: size, width: size }} />
+    <div style={{ height: Number(size) - 15, width: Number(size) - 15 }} />
+    <div style={{ height: Number(size) - 15, width: Number(size) - 15 }} />
+    <div style={{ height: Number(size) - 15, width: Number(size) - 15 }} />
+    <div style={{ height: Number(size) - 15, width: Number(size) - 15 }} />
   </div>
 ));

@@ -5,14 +5,16 @@ import { ThreeMaxHintsControl } from 'models/ThreeMaxHintsControl';
 import './App.scss';
 
 const App = () => (
-  <div className='App'>
-    <TextControl />
-    <AlertControl />
-    <div className='d-flex'>
+  <main className='App'>
+    <section className='d-flex App__btns-controls'>
+      <TextControl />
+      <AlertControl />
+    </section>
+    <section className='d-flex App__search-controls'>
       <ThreeMaxHintsControl />
       <TenMaxHintsControl />
-    </div>
-  </div>
+    </section>
+  </main>
 );
 
 export default App;
