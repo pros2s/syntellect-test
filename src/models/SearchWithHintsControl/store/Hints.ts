@@ -41,4 +41,12 @@ export class Hints {
   get hintsArray() {
     return this.hints;
   }
+
+  get isLoadingStatus() {
+    return this.isLoading;
+  }
+
+  get errorMessageString() {
+    return this.errorMessage;
+  }
 }
