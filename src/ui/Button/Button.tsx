@@ -1,6 +1,6 @@
-import { ButtonHTMLAttributes, memo } from 'react';
+import { ButtonHTMLAttributes, memo } from "react";
 
-import './Button.scss';
+import "./Button.scss";
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   text?: string;
@@ -11,7 +11,7 @@ export const Button = memo((props: ButtonProps) => {
   const { children, text, callback, ...restProps } = props;
 
   return (
-    <button type='button' className='Button' {...restProps} onClick={callback}>
+    <button type="button" className="Button" {...restProps} onClick={callback}>
       {text}
     </button>
   );

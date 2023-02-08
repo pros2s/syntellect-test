@@ -1,4 +1,4 @@
-import countries from './countries.json';
+import countries from "./countries.json";
 
 export interface CountryInfo {
   name: string;
@@ -6,11 +6,15 @@ export interface CountryInfo {
   flag: string;
 }
 
+function getRandom(min: number, max: number) {
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
 export function getCountryByName(countryName: string): Promise<CountryInfo[]> {
   return new Promise((resolve) => {
     setTimeout(resolve, getRandom(100, 800));
   }).then(() => {
-    if (typeof countryName !== 'string' || !countryName) {
+    if (typeof countryName !== "string" || !countryName) {
       return [];
     }
 
@@ -22,8 +26,4 @@ export function getCountryByName(countryName: string): Promise<CountryInfo[]> {
         x.fullName.toLocaleLowerCase().startsWith(searchText)
     );
   });
-}
-
-function getRandom(min: number, max: number) {
-  return Math.floor(Math.random() * (max - min + 1)) + min;
 }

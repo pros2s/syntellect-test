@@ -1,2 +1,2 @@
-export { ButtonsList } from './ui/ButtonsList';
-export type { IButton } from './types/IButton';
+export { ButtonsList } from "./ui/ButtonsList";
+export type { IButton } from "./types/IButton";

@@ -1,4 +1,4 @@
-import { makeAutoObservable } from 'mobx';
+import { makeAutoObservable } from "mobx";
 
 export class Input {
   protected value: string | number;
@@ -6,7 +6,7 @@ export class Input {
   constructor() {
     makeAutoObservable(this);
 
-    this.value = '';
+    this.value = "";
   }
 
   setValue = (newValue: string | number) => {

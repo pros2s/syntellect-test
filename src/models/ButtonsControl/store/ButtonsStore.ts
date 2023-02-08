@@ -1,5 +1,5 @@
-import { IButton } from 'components/ButtonsList';
-import { makeAutoObservable } from 'mobx';
+import { IButton } from "components/ButtonsList";
+import { makeAutoObservable } from "mobx";
 
 export class Buttons {
   protected buttons: IButton[];

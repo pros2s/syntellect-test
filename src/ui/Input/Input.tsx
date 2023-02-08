@@ -1,8 +1,11 @@
-import { ChangeEvent, memo, InputHTMLAttributes } from 'react';
+import { ChangeEvent, memo, InputHTMLAttributes } from "react";
 
-import './Input.scss';
+import "./Input.scss";
 
-type DefaultInputProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'value' | 'onChange'>;
+type DefaultInputProps = Omit<
+  InputHTMLAttributes<HTMLInputElement>,
+  "value" | "onChange"
+>;
 
 interface InputProps extends DefaultInputProps {
   value?: string | number;
@@ -14,5 +17,12 @@ export const Input = memo(({ value, onChange, ...otherProps }: InputProps) => {
     onChange?.(e.target.value);
   };
 
-  return <input className='Input' value={value ?? ''} onChange={changeHandler} {...otherProps} />;
+  return (
+    <input
+      className="Input"
+      value={value ?? ""}
+      onChange={changeHandler}
+      {...otherProps}
+    />
+  );
 });

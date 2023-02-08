@@ -1,7 +1,11 @@
-import { Buttons } from '../store/ButtonsStore';
-import { v4 as uuidv4 } from 'uuid';
+import { v4 as uuidv4 } from "uuid";
+import { Buttons } from "../store/ButtonsStore";
 
-export const useAddNewButton = (store: Buttons, text: string, callback: () => void) => {
+export const useAddNewButton = (
+  store: Buttons,
+  text: string,
+  callback: () => void
+) => {
   const { addButton } = store;
 
   return () => {
