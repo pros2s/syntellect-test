@@ -22,8 +22,3 @@ export class Buttons {
     return this.buttons;
   }
 }
-
-export const leftButtonsStore = new Buttons();
-export const rightButtonsStore = new Buttons();
-
-

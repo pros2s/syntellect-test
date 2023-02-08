@@ -1,6 +1,6 @@
 import { makeAutoObservable } from 'mobx';
 
-class Input {
+export class Input {
   protected value: string | number;
 
   constructor() {
@@ -17,5 +17,3 @@ class Input {
     return this.value;
   }
 }
-
-export const inputStore = new Input();

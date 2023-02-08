@@ -1,18 +1,24 @@
-import { ButtonsList, IButton } from 'components/ButtonsList';
+import { ButtonsList } from 'components/ButtonsList';
 import { Input } from 'ui/Input';
 import { observer } from 'mobx-react';
-import { inputStore } from '../store/InputStore';
+
+import { Buttons } from '../store/ButtonsStore';
+import { Input as InputInstance } from '../store/InputStore';
 
 import './ButtonsControl.scss';
 
 interface ButtonsControlProps {
-  leftBtns: IButton[];
-  rightBtns: IButton[];
+  inputStore: InputInstance;
+  leftBtnsStore?: Buttons;
+  rightBtnsStore?: Buttons;
 }
 
 export const ButtonsControl = observer((props: ButtonsControlProps) => {
-  const { leftBtns, rightBtns } = props;
+  const { leftBtnsStore, rightBtnsStore, inputStore } = props;
+
   const { setValue, actualValue } = inputStore;
+  const { buttonsArray: leftBtns = [] } = leftBtnsStore ?? {};
+  const { buttonsArray: rightBtns = [] } = rightBtnsStore ?? {};
 
   return (
     <div className='ButtonsControl'>

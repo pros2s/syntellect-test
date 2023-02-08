@@ -8,7 +8,13 @@ module.exports = {
     ecmaVersion: 'latest',
     sourceType: 'module',
   },
-  extends: ['react-app', 'react-app/jest', 'plugin:@typescript-eslint/recommended', 'prettier'],
+  extends: [
+    'react-app',
+    'react-app/jest',
+    'plugin:@typescript-eslint/recommended',
+    'airbnb',
+    'prettier',
+  ],
 
   plugins: ['react', 'react-hooks', 'prettier'],
   rules: {
