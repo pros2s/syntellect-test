@@ -21,7 +21,7 @@ export const ButtonsControl = observer((props: ButtonsControlProps) => {
   const { buttonsArray: rightBtns = [] } = rightBtnsStore ?? {};
 
   return (
-    <div className='ButtonsControl'>
+    <section className='ButtonsControl'>
       <Input value={actualValue} onChange={setValue} />
       <div className='ButtonsControl__btns'>
         <div className='ButtonsControl__btns_left'>
@@ -33,6 +33,6 @@ export const ButtonsControl = observer((props: ButtonsControlProps) => {
           {rightBtnsStore && <ButtonsList btnsList={rightBtns} />}
         </div>
       </div>
-    </div>
+    </section>
   );
 });
