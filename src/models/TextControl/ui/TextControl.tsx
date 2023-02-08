@@ -6,11 +6,11 @@ const textRightButtonsStore = new Buttons();
 const textInputStore = new Input();
 
 export const TextControl = observer(() => {
-  const { setValue } = textInputStore;
-
-  const clearButton = useAddNewButton(textRightButtonsStore, 'Clear Button', () => setValue(''));
+  const clearButton = useAddNewButton(textRightButtonsStore, 'Clear Button', () =>
+    textInputStore.setValue('')
+  );
   const helloButton = useAddNewButton(textRightButtonsStore, 'Say Hello', () =>
-    setValue('Hello world!')
+    textInputStore.setValue('Hello world!')
   );
 
   useEffect(() => {

@@ -36,6 +36,7 @@ module.exports = {
     'react-hooks/exhaustive-deps': 'error',
 
     // off
+    'no-alert': 'off',
     'import/no-unresolved': 'off',
     'import/extensions': 'off',
     'import/prefer-default-export': 'off',

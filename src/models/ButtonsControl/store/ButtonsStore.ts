@@ -1,5 +1,5 @@
-import { IButton } from "components/ButtonsList";
-import { makeAutoObservable } from "mobx";
+import { IButton } from 'components/ButtonsList';
+import { makeAutoObservable } from 'mobx';
 
 export class Buttons {
   protected buttons: IButton[];
@@ -15,7 +15,7 @@ export class Buttons {
   };
 
   removeButton = (id: string) => {
-    this.buttons.filter((btn) => btn.id !== id);
+    this.buttons = this.buttons.filter((btn) => btn.id !== id);
   };
 
   get buttonsArray() {
