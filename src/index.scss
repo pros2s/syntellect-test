@@ -6,12 +6,43 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* Firefox */
+* {
+  scrollbar-width: auto;
+  scrollbar-color: #3d3d3d #858585;
+}
+
+/* Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+*::-webkit-scrollbar-track {
+  background: #3d3d3d;
+  border-radius: 6px;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #3d3d3d;
+  border: 1px solid #858585;
+  border-radius: 6px;
+}
+
 .d-none {
   display: none;
 }
 
 .d-flex {
   display: flex;
+}
+
+.ai-center {
+  align-items: center;
+}
+
+.w-100 {
+  width: 100%;
 }
 
 code {

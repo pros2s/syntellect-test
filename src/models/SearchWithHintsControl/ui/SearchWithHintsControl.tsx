@@ -3,7 +3,6 @@ import { useCallback, useMemo } from 'react';
 import { Input } from 'ui/Input';
 import { Input as InputInstance } from 'models/ButtonsControl';
 import { observer } from 'mobx-react';
-import { Loader } from 'ui/Loader';
 import { useDebounce } from '../hooks/useDebounce';
 import { Hints } from '../store/Hints';
 
@@ -49,7 +48,6 @@ export const SearchWithHintsControl = observer(
       [inputStore, setCurrentHint, setIsHintMenuOpened]
     );
 
-    const loader = useMemo(() => <Loader size={100} />, []);
     const error = useMemo(
       () => <h1 className='SearchWithHintsControl__error'>{errorMessageString}</h1>,
       [errorMessageString]
@@ -60,10 +58,14 @@ export const SearchWithHintsControl = observer(
         <Input value={inputStore.actualValue} onChange={onChangeCountry} />
 
         {errorMessageString && error}
-        {isLoadingStatus && loader}
 
-        {isHintMenuOpenedValue && !isLoadingStatus && (
-          <HintsList hints={hintsArray} hintLimit={hintLimit} onCountryClick={onCountryClick} />
+        {isHintMenuOpenedValue && (
+          <HintsList
+            hints={hintsArray}
+            hintLimit={hintLimit}
+            onCountryClick={onCountryClick}
+            isHintsLoading={isLoadingStatus}
+          />
         )}
       </section>
     );
